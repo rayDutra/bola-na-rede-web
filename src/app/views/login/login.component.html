@@ -3,7 +3,11 @@
     <h1 class="font-bold text-2xl text-gray-900">Olá Bem Vindo De Volta!</h1>
     <p class="text-slate-400 mt-2">Entre com sua conta</p>
 
-    <!-- Campo de Email -->
+    @if(loginErrorMessage){
+    <p class="text-red-500 text-sm mt-2">
+      {{ loginErrorMessage }}
+    </p>
+    }
     <div class="relative mt-6">
       <img
         src="/imgs/vector.png"
@@ -14,34 +18,54 @@
         type="email"
         id="email"
         name="email"
-        placeholder="entre com seu email"
+        placeholder="Entre com seu email"
         [(ngModel)]="user.email"
+        #email="ngModel"
         required
+        (input)="resetErrorMessage()"
         class="pl-10 mt-2 block w-full shadow-sm focus:ring-indigo-500 rounded-lg bg-slate-100 size-12"
       />
+      @if(email.invalid && (email.touched || form.submitted)){
+      <p class="text-red-500 text-sm mt-1">
+        O email é obrigatório.
+      </p>
+      }
     </div>
 
+    <!-- Campo de Senha -->
     <div class="relative mt-6">
       <img
         src="/imgs/lock.png"
         alt="Ícone de senha"
-        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 "
       />
       <input
-        type="password"
+        [type]="passwordVisible ? 'text' : 'password'"
         id="password"
         name="password"
-        placeholder="entre com sua senha"
+        placeholder="Entre com sua senha"
         [(ngModel)]="user.password"
+        #password="ngModel"
         required
-        class="pl-10 mt-2 block w-full shadow-sm focus:ring-indigo-500 rounded-lg bg-slate-100 size-12"
+        (input)="resetErrorMessage()"
+        class="pl-10 pr-10 mt-2 block w-full shadow-sm focus:ring-indigo-500 rounded-lg bg-slate-100 size-12"
       />
+      <img
+        src="/imgs/union.png"
+        alt="Ícone de exibir senha"
+        class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 cursor-pointer"
+        (click)="togglePasswordVisibility()"
+      />
+      @if(password.invalid && (password.touched || form.submitted)){
+      <p class="text-red-500 text-sm mt-1">
+        A senha é obrigatória.
+      </p>}
     </div>
 
     <div class="mt-6 flex items-center justify-items-center">
       <button
         type="submit"
-        class="bg-sky-600 w-96 size-12 mt-3 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+        class="bg-sky-600 w-full size-12 mt-3 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
       >
         Entrar
       </button>
