@@ -1,0 +1,50 @@
+<div class="container mx-auto flex justify-center items-center min-h-screen">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="w-full max-w-lg p-6 bg-white shadow rounded">
+    <h1 class="font-bold text-2xl text-gray-900">Olá Bem Vindo De Volta!</h1>
+    <p class="text-slate-400 mt-2">Entre com sua conta</p>
+
+    <!-- Campo de Email -->
+    <div class="relative mt-6">
+      <img
+        src="/imgs/vector.png"
+        alt="Ícone de email"
+        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="entre com seu email"
+        [(ngModel)]="user.email"
+        required
+        class="pl-10 mt-2 block w-full shadow-sm focus:ring-indigo-500 rounded-lg bg-slate-100 size-12"
+      />
+    </div>
+
+    <div class="relative mt-6">
+      <img
+        src="/imgs/lock.png"
+        alt="Ícone de senha"
+        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+      />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="entre com sua senha"
+        [(ngModel)]="user.password"
+        required
+        class="pl-10 mt-2 block w-full shadow-sm focus:ring-indigo-500 rounded-lg bg-slate-100 size-12"
+      />
+    </div>
+
+    <div class="mt-6 flex items-center justify-items-center">
+      <button
+        type="submit"
+        class="bg-sky-600 w-96 size-12 mt-3 rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+      >
+        Entrar
+      </button>
+    </div>
+  </form>
+</div>
