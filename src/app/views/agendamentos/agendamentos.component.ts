@@ -55,10 +55,8 @@ export class AgendamentosComponent implements OnInit {
           a.horarios.some(h => h.inicio === agendamento.horarios[0].inicio)
         );
 
-        // Verifica se já existe a mesma quadra no mesmo horário
         const isQuadraDuplicada = existingAgendamentos.some(a => a.quadraNome === agendamento.quadraNome);
 
-        // Verifica se o número máximo de quadras para o horário já foi atingido
         if (!isQuadraDuplicada && existingAgendamentos.length < 4) {
           validAgendamentos.push(agendamento);
         }
@@ -71,17 +69,16 @@ export class AgendamentosComponent implements OnInit {
   isHorarioMarcado(date: string, time: string): string[] {
     const quadrasMarcadas: string[] = [];
 
-    // Verificar todos os agendamentos que coincidem com a data e horário
     this.agendamentos.forEach(agendamento => {
       if (agendamento.dataAgendamento === date) {
         const horario = agendamento.horarios.find(h => h.inicio === time.split(' ')[0]);
         if (horario) {
-          quadrasMarcadas.push(agendamento.quadraNome); // Adiciona o nome da quadra marcada
+          quadrasMarcadas.push(agendamento.quadraNome);
         }
       }
     });
 
-    return quadrasMarcadas; // Retorna todas as quadras marcadas no horário
+    return quadrasMarcadas;
   }
   getQuadraClass(quadra: string): string {
     switch (quadra) {
@@ -97,6 +94,5 @@ export class AgendamentosComponent implements OnInit {
         return '';
     }
   }
-
 
 }

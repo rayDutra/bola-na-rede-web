@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
-// Exportar os tipos
 export interface Horario {
   inicio: string;
   fim: string;
@@ -14,7 +13,7 @@ export interface Agendamento {
   id: string;
   userId: number;
   quadraId: string;
-  quadraNome: string; // Supondo que você tenha esse campo
+  quadraNome: string;
   dataAgendamento: string;
   status: boolean;
   horarios: Horario[];
