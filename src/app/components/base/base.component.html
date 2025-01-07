@@ -1,0 +1,59 @@
+<div class="top-banner"></div>
+<div class="flex min-h-screen">
+  <nav class="w-1/5 bg-[#f5f6fa] text-black p-4 border-r border-gray-300">
+    <ul>
+      <li class="mb-4">
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          class="flex items-center py-2 px-4 rounded hover:bg-gray-400"
+          (mouseenter)="hoveredItem = 'home'"
+          (mouseleave)="hoveredItem = null"
+        >
+          <img
+            [src]="hoveredItem === 'home' ? '/imgs/house.png' : '/imgs/house.png'"
+            alt="Ícone de Home"
+            class="w-5 h-5 mr-2"
+          />
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="mb-4">
+        <a
+          routerLink="/agendamentos"
+          routerLinkActive="active"
+          class="flex items-center py-2 px-4 rounded hover:bg-gray-400"
+          (mouseenter)="hoveredItem = 'agendamentos'"
+          (mouseleave)="hoveredItem = null"
+        >
+          <img
+            [src]="hoveredItem === 'agendamentos' ? '/imgs/list-white.png' : '/imgs/list.png'"
+            alt="Ícone de Agendamentos"
+            class="w-5 h-5 mr-2"
+          />
+          <span>Agendamentos</span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/clientes"
+          routerLinkActive="active"
+          class="flex items-center py-2 px-4 rounded hover:bg-gray-400"
+          (mouseenter)="hoveredItem = 'clientes'"
+          (mouseleave)="hoveredItem = null"
+        >
+          <img
+            [src]="hoveredItem === 'clientes' ? '/imgs/users-white.png' : '/imgs/users.png'"
+            alt="Ícone de Clientes"
+            class="w-5 h-5 mr-2"
+          />
+          <span>Clientes</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="w-4/5 p-6 bg-[#f5f6fa]">
+    <router-outlet></router-outlet>
+  </div>
+</div>

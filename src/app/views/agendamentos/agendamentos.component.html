@@ -1,1 +1,34 @@
-<p>agendamentos works!</p>
+<div>
+    <h4 class="text-xl font-bold mb-4">Agendamentos</h4>
+    <div class="overflow-x-auto">
+      <table class="table-auto w-full">
+        <thead>
+        <tr>
+          <th class="border border-gray-300 px-4 py-2"></th>
+          <th *ngFor="let date of weekDates" class="border border-gray-300 px-4 py-2">
+            <span class="day">{{ date.day }}</span> <br/>
+            <span class="date">({{ date.date }})</span>
+          </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let time of timeSlots">
+          <td class="border border-gray-300 px-4 py-2">
+            <div>
+              <span>{{ time.split(' ')[0] }}</span><br/>
+              <span>{{ time.split(' ')[1] }}</span>
+            </div>
+          </td>
+          <td *ngFor="let date of weekDates" class="border border-gray-300 px-4 py-2">
+            <ng-container *ngIf="isHorarioMarcado(date.date, time) as quadras">
+        <span *ngFor="let quadra of quadras" [ngClass]="getQuadraClass(quadra)" class="quadra-nome">
+          {{ quadra }} <br/>
+        </span>
+            </ng-container>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,109 @@
+{
+  "agendamentos": [
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "1",
+      "quadraNome": "Quadra 1",
+      "dataAgendamento": "08/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "1",
+      "quadraNome": "Quadra 1",
+      "dataAgendamento": "09/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "4",
+      "quadraNome": "Quadra 4",
+      "dataAgendamento": "09/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "3",
+      "quadraNome": "Quadra 3",
+      "dataAgendamento": "09/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "3",
+      "quadraNome": "Quadra 3",
+      "dataAgendamento": "09/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "2",
+      "quadraNome": "Quadra 2",
+      "dataAgendamento": "09/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "10:00",
+          "fim": "11:00",
+          "disponivel": true
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "userId": 1,
+      "quadraId": "2",
+      "quadraNome": "Quadra 2",
+      "dataAgendamento": "12/01/2025",
+      "status": true,
+      "horarios": [
+        {
+          "inicio": "17:00",
+          "fim": "18:00",
+          "disponivel": true
+        }
+      ]
+    }
+  ]
+}
